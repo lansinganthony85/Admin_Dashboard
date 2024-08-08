@@ -1,0 +1,97 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(150px, 300px) auto;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: "dashboard header"
+                        "dashboard cont";
+}
+
+#dashboard {
+    grid-area: dashboard;
+    background-color: #1992D4;
+}
+
+#header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+}
+
+#searchbar {
+    display: flex;
+}
+
+#profile-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#profile-title {
+    display: grid;
+}
+
+#profile-title img {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#profile-title p {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+#profile-title h2 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+#content {
+    grid-area: cont;
+    background-color: #E2E8F0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "projects announce"
+                        "projects trends";
+    gap: 15px;
+}
+
+#project-container {
+    grid-area: projects;
+    display: flex;
+    flex-direction: column;
+}
+
+#announcements-container {
+    grid-area: announce;
+    display: flex;
+    flex-direction: column;
+}
+
+#announcements {
+    background-color: white;
+}
+
+#trending-container {
+    grid-area: trends;
+    display: flex;
+    flex-direction: column;
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    gap: 15px;
+}
+
+.project-card {
+    background-color: white;
+    height: 100px;
+}
