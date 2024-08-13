@@ -3,11 +3,21 @@
 html, body {
     padding: 0;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
 }
 
 .container {
     display: grid;
-    grid-template-columns: minmax(150px, 300px) auto;
+    grid-template-columns: minmax(300px, 350px) auto;
     grid-template-rows: 1fr 5fr;
     grid-template-areas: "dashboard header"
                         "dashboard cont";
@@ -16,6 +26,38 @@ html, body {
 #dashboard {
     grid-area: dashboard;
     background-color: #1992D4;
+    color: white;
+}
+
+.dashboard-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: -10px;
+}
+
+.dashboard-menu:first-child {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.dashboard-menu img {
+    margin: 0 20px;
+    height: 1.6rem;
+    filter: invert(100%);
+}
+
+.dashboard-menu h2 {
+    margin-left: 15px;
+}
+
+.dashboard-menu h1 {
+    margin-left: 0;
+}
+
+.dashboard-menu:first-child img {
+    height: 3.5rem;
 }
 
 #header {
