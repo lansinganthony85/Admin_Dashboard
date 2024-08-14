@@ -31,6 +31,7 @@ h3 {
     grid-area: dashboard;
     background-color: #1992D4;
     color: white;
+    z-index: 2;
 }
 
 .dashboard-menu, .dashboard-menu a {
@@ -79,6 +80,11 @@ h3 {
 
     padding-left: 50px;
     padding-right: 50px;
+
+    box-shadow: 0px 5px 5px #b9bdc2;
+    z-index: 1;
+
+    max-height: 234px;
 }
 
 #searchbar {
@@ -159,18 +165,19 @@ h3 {
 }
 
 #profile-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     margin: 25px 0;
-    padding-right: 25px;
+    padding-right: 0px;
 }
 
 #profile-title {
     display: grid;
-    justify-self: start;
+    margin-right: auto;
     align-items: center;
     gap: 0;
+    min-width: 400px;
 }
 
 .lg-img {
@@ -199,7 +206,8 @@ h3 {
 }
 
 #share-buttons {
-    justify-self: end;
+    margin-left: auto;
+    min-width: 500px;
 }
 
 .content-button {
@@ -231,7 +239,7 @@ h3 {
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "projects announce"
                         "projects trends";
-    gap: 15px;
+    padding: 20px 30px;
 }
 
 #project-container {
@@ -259,10 +267,35 @@ h3 {
 #projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, 400px);
-    gap: 15px;
+    gap: 30px;
 }
 
 .project-card {
     background-color: white;
-    height: 100px;
+    height: auto;
+    border-left: 10px solid #F0BF4C;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #b9bdc2;
+}
+
+@media(max-width: 1260px) {
+
+    #header {
+        max-height: 400px;
+    }
+
+    #profile-header {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 25px;
+    }
+
+    #profile-title {
+        justify-self: start;
+    }
+
+    #share-buttons {
+        justify-self: start;
+        margin-left: 0;
+    }
 }
